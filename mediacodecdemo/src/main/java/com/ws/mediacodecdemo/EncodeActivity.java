@@ -150,10 +150,10 @@ StrictMode.setVmPolicy(new StrictMode.VmPolicy.Builder()
 	public void surfaceCreated(SurfaceHolder arg0) {
 		try {
 			if (m_camera != null) {
-//				for (byte[] buffer : mPreviewBuffer)
-//					m_camera.addCallbackBuffer(buffer);
-//
-//				m_camera.setPreviewCallbackWithBuffer(this);
+				for (byte[] buffer : mPreviewBuffer)
+					m_camera.addCallbackBuffer(buffer);
+
+				m_camera.setPreviewCallbackWithBuffer(this);
 				m_camera.setPreviewDisplay(m_surfaceHolder);
 
 				m_camera.startPreview();
@@ -238,7 +238,7 @@ StrictMode.setVmPolicy(new StrictMode.VmPolicy.Builder()
 //		Log.i(TAG, "onPreviewFrame: " + mFrameCount);
 
         //把摄像头的数据传给编码器
-//		int ret = avcCodec.offerEncoder(data,h264);
+		int ret = avcCodec.offerEncoder(data,h264);
 
 //		if(ret > 0)
 //		{
